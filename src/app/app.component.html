@@ -1,0 +1,10 @@
+<h3>Nested FormGroup</h3>
+
+<form [formGroup]="myForm">
+  <label>Name: </label>
+  <input formControlName="name" />
+  <app-child [address]="myForm.controls.address"></app-child>
+  <button [disabled]="myForm.invalid">Submit</button>
+</form>
+
+<pre>Form Values: {{ myForm.value | json }}</pre>
