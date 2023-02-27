@@ -14,10 +14,7 @@ export class AppComponent  {
   ngOnInit() {
     this.myForm = this.fb.group({
       name: [''],
-      address: this.fb.group({
-        street: [''],
-        zip: ['']
-      })
+      address: this.fb.array([])
     })
   }
 }

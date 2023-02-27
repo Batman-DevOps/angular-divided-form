@@ -3,8 +3,8 @@
 <form [formGroup]="myForm">
   <label>Name: </label>
   <input formControlName="name" />
-  <app-child [address]="myForm.controls.address"></app-child>
+  <app-table [address]="myForm.controls.address"></app-table>
+  <br />
   <button [disabled]="myForm.invalid">Submit</button>
 </form>
-
 <pre>Form Values: {{ myForm.value | json }}</pre>
