@@ -1,7 +1,18 @@
-<div [formGroup]="address">
-
-  
-  <input formControlName="street" /><br />
-  <label>Zip: </label>
-  <input formControlName="zip" />
+<div [formGroup]="addressForm">
+  <table>
+    <thead>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+    </thead>
+    <tbody>
+      <tr formArrayName="addresses" *ngFor="let addr of addressForm.controls.addresses?.value; let i = index">
+      <ng-container>
+        <td><input formControlName="street" /></td>
+        <td><input formControlName="city" /></td>
+        <td><input formControlName="state" /></td>
+      </ng-container>
+      </tr>
+    </tbody>
+  </table>
 </div>
